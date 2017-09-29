@@ -9,11 +9,13 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { CouchServiceProvider } from '../providers/couch-service/couch-service';
 import { PouchProvider } from '../providers/pouch/pouch';
+import { AddDataPage } from '../pages/add-data/add-data';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    AddDataPage
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,8 @@ import { PouchProvider } from '../providers/pouch/pouch';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    AddDataPage
   ],
   providers: [
     StatusBar,

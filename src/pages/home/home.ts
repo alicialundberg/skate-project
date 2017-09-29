@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { PouchProvider } from '../../providers/pouch/pouch';
+import { AddDataPage } from '../add-data/add-data'; 
 
 
 @Component({
@@ -23,7 +24,9 @@ export class HomePage {
       this.tags = data;
       console.log(data);
     });
+  }
 
-}
-
+  pushAddDataPage(){
+       this.navCtrl.push(AddDataPage);
+   }
 }

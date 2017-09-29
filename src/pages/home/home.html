@@ -3,24 +3,10 @@
     <ion-title>
       Skate
     </ion-title>
+     <button ion-button icon-only (click)="pushAddDataPage()"><ion-icon name="add"></ion-icon></button>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-item>
-      <ion-textarea placeholder="Enter a description"></ion-textarea>
-    </ion-item>
-    <ion-item *ngFor="let tag of tags">
-      <ion-label>Tags</ion-label>
-      <ion-select [(ngModel)]="taggar" multiple="true" cancelText="Cancel" okText="OK!">
-        <ion-option value="{{tag.tag1}}">{{tag.tag1}}</ion-option>
-        <ion-option value="{{tag.tag2}}">{{tag.tag2}}</ion-option>
-        <ion-option value="{{tag.tag3}}">{{tag.tag3}}</ion-option>
-        <ion-option value="{{tag.tag4}}">{{tag.tag4}}</ion-option>
-        <ion-option value="{{tag.tag5}}">{{tag.tag5}}</ion-option>
-      </ion-select>
-    </ion-item>
-    <button ion-button round>Enter</button>
-  </ion-list>
+  
 </ion-content>

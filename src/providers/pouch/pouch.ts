@@ -2,11 +2,10 @@ import { Injectable } from '@angular/core';
 import PouchDB from 'pouchdb';
 
 /*
-  Generated class for the PouchProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
+Provider to connect with PouchDB and CouchDB.
+Gets tags from database!
 */
+
 @Injectable()
 export class PouchProvider {
 
@@ -18,7 +17,7 @@ export class PouchProvider {
 
     this.db = new PouchDB('skate');
 
-    this.remote = 'http://localhost:5984/misc';
+    this.remote = 'http://nile16.nu:5984/tags/';
 
     let options = {
     live: true,
@@ -28,6 +27,9 @@ export class PouchProvider {
 
     this.db.sync(this.remote, options);
   }
+
+  /* Update if someone change CouchDB manually on webbrowser */
+
     handleChange(change){
 
     let changedDoc = null;
@@ -95,10 +97,6 @@ export class PouchProvider {
 
   });
 
-  }
-
-  sendTags(tag) {
-  this.db.post(tag);
   }
 
 }
