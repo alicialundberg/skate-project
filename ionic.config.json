@@ -2,5 +2,7 @@
   "name": "skate",
   "app_id": "43e21bb1",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }

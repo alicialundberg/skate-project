@@ -1,27 +1,29 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { PouchProvider } from '../../providers/pouch/pouch';
-import { AddDataPage } from '../add-data/add-data'; 
+import { CouchServiceProvider } from '../../providers/couch-service/couch-service';
+import { AddDataPage } from '../add-data/add-data';
 
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
-  providers: [PouchProvider]
+  providers: [PouchProvider, CouchServiceProvider]
 
 })
 export class HomePage {
 
   tags: any;
+  data: any;
 
-  constructor(public navCtrl: NavController, public pouchService: PouchProvider) {
-
+  constructor(public navCtrl: NavController, public pouchService: PouchProvider, public addService: CouchServiceProvider) {
   }
+
 
   ionViewDidLoad(){
 
-    this.pouchService.getTags().then((data) => {
-      this.tags = data;
+    this.addService.getPost().then((data) => {
+      this.data = data;
       console.log(data);
     });
   }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { CouchServiceProvider } from '../../providers/couch-service/couch-service';
 import { PouchProvider } from '../../providers/pouch/pouch';
+import { Http } from '@angular/http';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class AddDataPage {
       type: 'post'
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public addService: CouchServiceProvider, public pouchService: PouchProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public addService: CouchServiceProvider, public pouchService: PouchProvider, public http: Http) {
   }
 
   ionViewDidLoad(){

@@ -33,4 +33,34 @@ addPost(post): void {
        this.db.put(post);
    }
 
+getPost() {
+   if (this.data) {
+   return Promise.resolve(this.data);
+   }
+
+   return new Promise(resolve => {
+
+   this.db.allDocs({
+
+     include_docs: true
+
+   }).then((result) => {
+
+     this.data = [];
+
+     let docs = result.rows.map((row) => {
+       this.data.push(row.doc);
+     });
+
+     resolve(this.data);
+     });
+
+   }).catch((error) => {
+
+     console.log(error);
+
+   });
+
+
+   }
 }
