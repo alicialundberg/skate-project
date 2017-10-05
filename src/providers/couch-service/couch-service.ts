@@ -3,7 +3,7 @@ import PouchDB from 'pouchdb';
 
 /*
   Provider to connect with PouchDB and CouchDB.
-  Push data to the database!
+  Post and Get data from the database!
 */
 
 @Injectable()
